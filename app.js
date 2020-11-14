@@ -176,11 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
     squares[ghost.currentIndex].classList.add('ghost')
     })
 
-  //get the coordinates of pacman or blinky on the grid with X and Y axis
-  function getCoordinates(index) {
-  return [index % width, Math.floor(index / width)]
-  }
-
   //move the Ghosts randomly
   ghosts.forEach(ghost => moveGhost(ghost))
 
@@ -211,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
         squares[ghost.currentIndex].classList.remove(ghost.className, 'ghost', 'scared-ghost')
         ghost.currentIndex = ghost.startIndex
         score +=100
-        squares[ghost.currentIndex].classList.a dd(ghost.className, 'ghost')
+        squares[ghost.currentIndex].classList.add(ghost.className, 'ghost')
       }
     checkForGameOver()
     }, ghost.speed)
